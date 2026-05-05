@@ -3,15 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>New Practical Repository</title>
+    <title>BI & DL Practical Repository</title>
     <style>
         :root {
             --primary: #2563eb;
+            --bi-color: #0891b2;
+            --dl-color: #7c3aed;
+            --ds-color: #059669;
             --bg: #f8fafc;
             --card: #ffffff;
             --text: #1e293b;
-            --accent: #7c3aed;
-            --success: #059669;
         }
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -24,59 +25,85 @@
             align-items: center;
         }
         .container {
-            max-width: 1000px;
+            max-width: 1100px;
             width: 100%;
         }
         header {
             text-align: center;
             margin-bottom: 40px;
+            padding: 20px;
+            background: var(--card);
+            border-radius: 15px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
         }
-        h1 { margin-bottom: 10px; color: var(--primary); }
-        h2 { border-bottom: 2px solid var(--primary); padding-bottom: 5px; margin-top: 30px; }
+        h1 { margin: 0; color: var(--primary); }
+        .section-title {
+            margin: 40px 0 20px;
+            padding-left: 15px;
+            border-left: 5px solid var(--primary);
+            font-size: 1.5rem;
+        }
+        .bi-title { border-color: var(--bi-color); color: var(--bi-color); }
+        .dl-title { border-color: var(--dl-color); color: var(--dl-color); }
+        .ds-title { border-color: var(--ds-color); color: var(--ds-color); }
 
-        .practical-grid {
+        .grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
             gap: 20px;
         }
         .card {
             background: var(--card);
             padding: 20px;
             border-radius: 12px;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
             border: 1px solid #e2e8f0;
+            transition: transform 0.2s, box-shadow 0.2s;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
         }
-        .card h3 { margin-top: 0; font-size: 1.1rem; }
-        .btn {
-            background: var(--primary);
-            color: white;
-            padding: 8px 16px;
-            text-decoration: none;
-            border-radius: 6px;
-            font-size: 0.9rem;
-            text-align: center;
-            font-weight: 500;
-            display: block;
-            transition: all 0.2s;
+        .card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
         }
-        .btn:hover { opacity: 0.9; transform: translateY(-1px); }
+        .card h3 { margin: 0 0 10px 0; font-size: 1.1rem; }
+        .file-info { font-size: 0.85rem; color: #64748b; margin-bottom: 15px; }
+
+        .btn {
+            display: block;
+            text-align: center;
+            padding: 10px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: background 0.2s;
+        }
+        .btn-bi { background: var(--bi-color); color: white; }
+        .btn-dl { background: var(--dl-color); color: white; }
+        .btn-ds { background: var(--ds-color); color: white; }
+        .btn:hover { opacity: 0.9; }
+
         .tag {
             font-size: 0.7rem;
             padding: 2px 6px;
-            background: #e2e8f0;
             border-radius: 4px;
-            color: #64748b;
-            margin-bottom: 10px;
+            text-transform: uppercase;
+            font-weight: bold;
+            margin-bottom: 8px;
             display: inline-block;
         }
-        .dataset-section {
-            background: #f1f5f9;
-            padding: 15px;
-            border-radius: 8px;
-            margin-top: 20px;
+        .tag-docx { background: #dbeafe; color: #1e40af; }
+        .tag-ipynb { background: #fef3c7; color: #92400e; }
+        .tag-csv { background: #dcfce7; color: #166534; }
+
+        footer {
+            margin-top: 60px;
+            padding: 20px;
+            text-align: center;
+            font-size: 0.9rem;
+            color: #64748b;
         }
     </style>
 </head>
@@ -84,78 +111,131 @@
 
 <div class="container">
     <header>
-        <h1>New Practical Collection</h1>
-        <p>Business Intelligence (BI) and Deep Learning (DL) Practicals</p>
+        <h1>BI & DL Practical Repository</h1>
+        <p>Download practical files and datasets for Business Intelligence and Deep Learning</p>
     </header>
 
-    <h2>📊 Business Intelligence (BI)</h2>
-    <div class="practical-grid">
+    <!-- Business Intelligence Section -->
+    <h2 class="section-title bi-title">📊 Business Intelligence (BI)</h2>
+    <div class="grid">
         <div class="card">
-            <div><span class="tag">DOCX</span><h3>BI Practical 1</h3></div>
-            <a href="BI_PR1.docx" class="btn" download>Download</a>
+            <div>
+                <span class="tag tag-docx">Document</span>
+                <h3>BI Practical 1</h3>
+                <p class="file-info">File: BI_PR1.docx</p>
+            </div>
+            <a href="BI_PR1.docx" class="btn btn-bi" download>Download DOCX</a>
         </div>
         <div class="card">
-            <div><span class="tag">DOCX</span><h3>BI Practical 2</h3></div>
-            <a href="BI_PR2.docx" class="btn" download>Download</a>
+            <div>
+                <span class="tag tag-docx">Document</span>
+                <h3>BI Practical 2</h3>
+                <p class="file-info">File: BI_PR2.docx</p>
+            </div>
+            <a href="BI_PR2.docx" class="btn btn-bi" download>Download DOCX</a>
         </div>
         <div class="card">
-            <div><span class="tag">DOCX</span><h3>BI Practical 3</h3></div>
-            <a href="BI_PR3.docx" class="btn" download>Download</a>
+            <div>
+                <span class="tag tag-docx">Document</span>
+                <h3>BI Practical 3</h3>
+                <p class="file-info">File: BI_PR3.docx</p>
+            </div>
+            <a href="BI_PR3.docx" class="btn btn-bi" download>Download DOCX</a>
         </div>
         <div class="card">
-            <div><span class="tag">IPYNB</span><h3>BI Practical 4</h3></div>
-            <a href="BI_PR4.ipynb" class="btn" download>Download</a>
+            <div>
+                <span class="tag tag-ipynb">Notebook</span>
+                <h3>BI Practical 4</h3>
+                <p class="file-info">File: BI_PR4.ipynb</p>
+            </div>
+            <a href="BI_PR4.ipynb" class="btn btn-bi" download>Download IPYNB</a>
         </div>
         <div class="card">
-            <div><span class="tag">IPYNB</span><h3>BI Practical 5</h3></div>
-            <a href="BI_PR5.ipynb" class="btn" download>Download</a>
-        </div>
-    </div>
-
-    <h2>🧠 Deep Learning (DL)</h2>
-    <div class="practical-grid">
-        <div class="card">
-            <div><span class="tag">IPYNB</span><h3>DL Practical 1</h3></div>
-            <a href="DL_PR1.ipynb" class="btn" download>Download</a>
-        </div>
-        <div class="card">
-            <div><span class="tag">IPYNB</span><h3>DL Practical 2</h3></div>
-            <a href="DL_PR2.ipynb" class="btn" download>Download</a>
-        </div>
-        <div class="card">
-            <div><span class="tag">IPYNB</span><h3>DL Practical 3</h3></div>
-            <a href="DL_PR3.ipynb" class="btn" download>Download</a>
-        </div>
-        <div class="card">
-            <div><span class="tag">IPYNB</span><h3>DL Practical 4</h3></div>
-            <a href="DL_PR4.ipynb" class="btn" download>Download</a>
-        </div>
-        <div class="card">
-            <div><span class="tag">IPYNB</span><h3>DL Practical 5</h3></div>
-            <a href="DL_PR5.ipynb" class="btn" download>Download</a>
+            <div>
+                <span class="tag tag-ipynb">Notebook</span>
+                <h3>BI Practical 5</h3>
+                <p class="file-info">File: BI_PR5.ipynb</p>
+            </div>
+            <a href="BI_PR5.ipynb" class="btn btn-bi" download>Download IPYNB</a>
         </div>
     </div>
 
-    <h2>📁 Datasets</h2>
-    <div class="dataset-section">
-        <ul style="list-style: none; padding: 0;">
-            <li style="padding: 10px; border-bottom: 1px solid #cbd5e1; display: flex; justify-content: space-between;">
-                <span>Sentiment Large Dataset</span>
-                <a href="sentiment_large.csv" style="color: var(--primary);" download>Download CSV</a>
-            </li>
-            <li style="padding: 10px; border-bottom: 1px solid #cbd5e1; display: flex; justify-content: space-between;">
-                <span>Uber Dataset</span>
-                <a href="UberDataset.csv" style="color: var(--primary);" download>Download CSV</a>
-            </li>
-            <li style="padding: 10px; display: flex; justify-content: space-between;">
-                <span>USA Housing Dataset</span>
-                <a href="USA_Housing.csv" style="color: var(--primary);" download>Download CSV</a>
-            </li>
-        </ul>
+    <!-- Deep Learning Section -->
+    <h2 class="section-title dl-title">🧠 Deep Learning (DL)</h2>
+    <div class="grid">
+        <div class="card">
+            <div>
+                <span class="tag tag-ipynb">Notebook</span>
+                <h3>DL Practical 1</h3>
+                <p class="file-info">File: DL_PR1.ipynb</p>
+            </div>
+            <a href="DL_PR1.ipynb" class="btn btn-dl" download>Download IPYNB</a>
+        </div>
+        <div class="card">
+            <div>
+                <span class="tag tag-ipynb">Notebook</span>
+                <h3>DL Practical 2</h3>
+                <p class="file-info">File: DL_PR2.ipynb</p>
+            </div>
+            <a href="DL_PR2.ipynb" class="btn btn-dl" download>Download IPYNB</a>
+        </div>
+        <div class="card">
+            <div>
+                <span class="tag tag-ipynb">Notebook</span>
+                <h3>DL Practical 3</h3>
+                <p class="file-info">File: DL_PR3.ipynb</p>
+            </div>
+            <a href="DL_PR3.ipynb" class="btn btn-dl" download>Download IPYNB</a>
+        </div>
+        <div class="card">
+            <div>
+                <span class="tag tag-ipynb">Notebook</span>
+                <h3>DL Practical 4</h3>
+                <p class="file-info">File: DL_PR4.ipynb</p>
+            </div>
+            <a href="DL_PR4.ipynb" class="btn btn-dl" download>Download IPYNB</a>
+        </div>
+        <div class="card">
+            <div>
+                <span class="tag tag-ipynb">Notebook</span>
+                <h3>DL Practical 5</h3>
+                <p class="file-info">File: DL_PR5.ipynb</p>
+            </div>
+            <a href="DL_PR5.ipynb" class="btn btn-dl" download>Download IPYNB</a>
+        </div>
     </div>
 
-    <footer style="margin-top: 40px; text-align: center; color: #64748b;">
-        <p>New files repository - Download for local use.</p>
+    <!-- Datasets Section -->
+    <h2 class="section-title ds-title">📁 Datasets</h2>
+    <div class="grid">
+        <div class="card">
+            <div>
+                <span class="tag tag-csv">CSV Data</span>
+                <h3>Sentiment Large</h3>
+                <p class="file-info">File: sentiment_large.csv</p>
+            </div>
+            <a href="sentiment_large.csv" class="btn btn-ds" download>Download Dataset</a>
+        </div>
+        <div class="card">
+            <div>
+                <span class="tag tag-csv">CSV Data</span>
+                <h3>Uber Dataset</h3>
+                <p class="file-info">File: UberDataset.csv</p>
+            </div>
+            <a href="UberDataset.csv" class="btn btn-ds" download>Download Dataset</a>
+        </div>
+        <div class="card">
+            <div>
+                <span class="tag tag-csv">CSV Data</span>
+                <h3>USA Housing</h3>
+                <p class="file-info">File: USA_Housing.csv</p>
+            </div>
+            <a href="USA_Housing.csv" class="btn btn-ds" download>Download Dataset</a>
+        </div>
+    </div>
+
+    <footer>
+        <p>Created for quick file access. &copy; 2024 BI & DL Repository</p>
     </footer>
 </div>
 
