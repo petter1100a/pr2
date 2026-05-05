@@ -11,6 +11,7 @@
             --card: #ffffff;
             --text: #1e293b;
             --accent: #7c3aed;
+            --success: #059669;
         }
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -31,6 +32,30 @@
             margin-bottom: 40px;
         }
         h1 { margin-bottom: 10px; color: var(--primary); }
+
+        .download-all-container {
+            margin-bottom: 30px;
+            text-align: center;
+            background: #dcfce7;
+            padding: 20px;
+            border-radius: 12px;
+            border: 2px dashed var(--success);
+        }
+        .btn-all {
+            background: var(--success);
+            color: white;
+            padding: 12px 24px;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 1rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.2s;
+        }
+        .btn-all:hover { opacity: 0.9; transform: translateY(-2px); box-shadow: 0 4px 12px rgba(5, 150, 105, 0.3); }
+
         .practical-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
@@ -100,8 +125,15 @@
 <div class="container">
     <header>
         <h1>Practical Repository</h1>
-        <p>Download individual source files, view theory, or download the full ZIP bundle.</p>
+        <p>Download individual source files, view theory, or get the entire collection.</p>
     </header>
+
+    <div class="download-all-container">
+        <p style="margin-top: 0; font-weight: 500;">Want everything at once?</p>
+        <a href="all.zip" class="btn-all" download>
+            <span>📦</span> Download All Practicals (ZIP)
+        </a>
+    </div>
 
     <div class="practical-grid">
         <!-- Practical 1 -->
@@ -230,7 +262,7 @@
     </div>
 
     <footer>
-        <p>Created for quick practical file access. Ensure ZIP files are pushed to GitHub for ZIP buttons to work.</p>
+        <p>Created for quick practical file access. Make sure all ZIP files are pushed to GitHub.</p>
     </footer>
 </div>
 
