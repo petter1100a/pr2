@@ -10,6 +10,7 @@
             --bg: #f8fafc;
             --card: #ffffff;
             --text: #1e293b;
+            --accent: #7c3aed;
         }
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -22,7 +23,7 @@
             align-items: center;
         }
         .container {
-            max-width: 800px;
+            max-width: 900px;
             width: 100%;
         }
         header {
@@ -32,8 +33,8 @@
         h1 { margin-bottom: 10px; color: var(--primary); }
         .practical-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 20px;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 25px;
         }
         .card {
             background: var(--card);
@@ -41,35 +42,45 @@
             border-radius: 12px;
             box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
             border: 1px solid #e2e8f0;
-            transition: transform 0.2s;
+            display: flex;
+            flex-direction: column;
         }
-        .card:hover { transform: translateY(-2px); }
-        .card h3 { margin-top: 0; border-bottom: 2px solid #f1f5f9; padding-bottom: 10px; }
-        .file-list { list-style: none; padding: 0; margin: 15px 0; }
+        .card h3 { margin-top: 0; border-bottom: 2px solid #f1f5f9; padding-bottom: 10px; display: flex; justify-content: space-between; align-items: center; }
+        .file-list { list-style: none; padding: 0; margin: 15px 0; flex-grow: 1; }
         .file-item {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 8px 0;
+            padding: 10px 0;
             border-bottom: 1px solid #f1f5f9;
         }
         .file-item:last-child { border-bottom: none; }
         .btn {
             background: var(--primary);
             color: white;
-            padding: 6px 12px;
+            padding: 8px 14px;
             text-decoration: none;
             border-radius: 6px;
             font-size: 0.85rem;
             font-weight: 500;
+            transition: opacity 0.2s;
         }
-        .btn:hover { background: #1d4ed8; }
+        .btn:hover { opacity: 0.9; }
+        .btn-zip { background: var(--accent); }
+        .btn-readme { background: #64748b; }
         .tag {
             font-size: 0.7rem;
-            padding: 2px 6px;
+            padding: 4px 8px;
             background: #e2e8f0;
             border-radius: 4px;
             color: #64748b;
+        }
+        .zip-section {
+            margin-top: 15px;
+            padding-top: 15px;
+            border-top: 2px dashed #e2e8f0;
+            display: flex;
+            gap: 10px;
         }
     </style>
 </head>
@@ -78,43 +89,33 @@
 <div class="container">
     <header>
         <h1>Practical Repository</h1>
-        <p>Download your practical files easily</p>
+        <p>Direct downloads for code, theory, and full bundles</p>
     </header>
 
     <div class="practical-grid">
         <!-- Practical 1 -->
         <div class="card">
             <h3>Practical 1 <span class="tag">Python</span></h3>
-            <p>Socket Programming: Client-Server communication.</p>
+            <p>Socket Programming: TCP Client-Server communication.</p>
             <div class="file-list">
-                <div class="file-item">
-                    <span>Client Script</span>
-                    <a href="pr1/client (1).py" class="btn" download>Download</a>
-                </div>
-                <div class="file-item">
-                    <span>Server Script</span>
-                    <a href="pr1/server (1).py" class="btn" download>Download</a>
-                </div>
+                <div class="file-item"><span>Client Script</span><a href="pr1/client (1).py" class="btn" download>Code</a></div>
+                <div class="file-item"><span>Server Script</span><a href="pr1/server (1).py" class="btn" download>Code</a></div>
+            </div>
+            <div class="zip-section">
+                <a href="pr1.zip" class="btn btn-zip" download>Download All (ZIP)</a>
             </div>
         </div>
 
         <!-- Practical 2 -->
         <div class="card">
             <h3>Practical 2 <span class="tag">Java RMI</span></h3>
-            <p>RMI String Concatenation Application.</p>
+            <p>RMI String Concatenation Distributed App.</p>
             <div class="file-list">
-                <div class="file-item">
-                    <span>Client.java</span>
-                    <a href="pr2/Client.java" class="btn" download>Download</a>
-                </div>
-                <div class="file-item">
-                    <span>Server.java</span>
-                    <a href="pr2/Server.java" class="btn" download>Download</a>
-                </div>
-                <div class="file-item">
-                    <span>Interface & Impl</span>
-                    <a href="pr2/" class="btn">View Folder</a>
-                </div>
+                <div class="file-item"><span>Main Files</span><a href="pr2/" class="btn">Browse</a></div>
+                <div class="file-item"><span>Theory/Manual</span><a href="pr2/README.md" class="btn btn-readme" target="_blank">View README</a></div>
+            </div>
+            <div class="zip-section">
+                <a href="pr2.zip" class="btn btn-zip" download>Download All (ZIP)</a>
             </div>
         </div>
 
@@ -123,34 +124,25 @@
             <h3>Practical 4 <span class="tag">Notebook</span></h3>
             <p>Sets implementation and operations.</p>
             <div class="file-list">
-                <div class="file-item">
-                    <span>pr4(sets).ipynb</span>
-                    <a href="pr4(sets).ipynb" class="btn" download>Download</a>
-                </div>
+                <div class="file-item"><span>Notebook File</span><a href="pr4(sets).ipynb" class="btn" download>Download</a></div>
             </div>
         </div>
 
         <!-- Practical 5 -->
         <div class="card">
             <h3>Practical 5 <span class="tag">Notebook</span></h3>
-            <p>Load Balancing algorithms.</p>
+            <p>Load Balancing algorithms implementation.</p>
             <div class="file-list">
-                <div class="file-item">
-                    <span>pr5(loadbalancing).ipynb</span>
-                    <a href="pr5(loadbalancing).ipynb" class="btn" download>Download</a>
-                </div>
+                <div class="file-item"><span>Notebook File</span><a href="pr5(loadbalancing).ipynb" class="btn" download>Download</a></div>
             </div>
         </div>
 
         <!-- Practical 6 -->
         <div class="card">
             <h3>Practical 6 <span class="tag">Notebook</span></h3>
-            <p>Practical 6 Notebook file.</p>
+            <p>Practical 6 code and execution.</p>
             <div class="file-list">
-                <div class="file-item">
-                    <span>pr6.ipynb</span>
-                    <a href="pr6.ipynb" class="btn" download>Download</a>
-                </div>
+                <div class="file-item"><span>Notebook File</span><a href="pr6.ipynb" class="btn" download>Download</a></div>
             </div>
         </div>
 
@@ -159,42 +151,29 @@
             <h3>Practical 7 <span class="tag">Notebook</span></h3>
             <p>Damage Classification analysis.</p>
             <div class="file-list">
-                <div class="file-item">
-                    <span>pr7(damage...).ipynb</span>
-                    <a href="pr7(damage classification).ipynb" class="btn" download>Download</a>
-                </div>
+                <div class="file-item"><span>Notebook File</span><a href="pr7(damage classification).ipynb" class="btn" download>Download</a></div>
             </div>
         </div>
 
         <!-- Practical 8 -->
         <div class="card">
             <h3>Practical 8 <span class="tag">Notebook</span></h3>
-            <p>DEAP framework implementation.</p>
+            <p>DEAP framework for algorithms.</p>
             <div class="file-list">
-                <div class="file-item">
-                    <span>pr8(DEAP).ipynb</span>
-                    <a href="pr8(DEAP).ipynb" class="btn" download>Download</a>
-                </div>
+                <div class="file-item"><span>Notebook File</span><a href="pr8(DEAP).ipynb" class="btn" download>Download</a></div>
             </div>
         </div>
 
         <!-- Practical 9 -->
         <div class="card">
             <h3>Practical 9 <span class="tag">Java RMI</span></h3>
-            <p>Hotel Management RMI System.</p>
+            <p>Hotel Management System via RMI.</p>
             <div class="file-list">
-                <div class="file-item">
-                    <span>HotelClient.java</span>
-                    <a href="pr 9/HotelClient.java" class="btn" download>Download</a>
-                </div>
-                <div class="file-item">
-                    <span>HotelServer.java</span>
-                    <a href="pr 9/HotelServer.java" class="btn" download>Download</a>
-                </div>
-                <div class="file-item">
-                    <span>View All Files</span>
-                    <a href="pr 9/" class="btn">Browse</a>
-                </div>
+                <div class="file-item"><span>Main Files</span><a href="pr 9/" class="btn">Browse</a></div>
+                <div class="file-item"><span>Theory/Manual</span><a href="pr 9/README.md" class="btn btn-readme" target="_blank">View README</a></div>
+            </div>
+            <div class="zip-section">
+                <a href="pr9.zip" class="btn btn-zip" download>Download All (ZIP)</a>
             </div>
         </div>
 
@@ -203,17 +182,14 @@
             <h3>Practical 10 <span class="tag">Notebook</span></h3>
             <p>ASO algorithm implementation.</p>
             <div class="file-list">
-                <div class="file-item">
-                    <span>pr10(ASO).ipynb</span>
-                    <a href="pr10(ASO).ipynb" class="btn" download>Download</a>
-                </div>
+                <div class="file-item"><span>Notebook File</span><a href="pr10(ASO).ipynb" class="btn" download>Download</a></div>
             </div>
         </div>
     </div>
 
-    <footer style="margin-top: 50px; text-align: center; color: #64748b; font-size: 0.9rem;">
-        <p>Created for quick practical file access.</p>
-    </footer >
+    <footer style="margin-top: 50px; text-align: center; color: #64748b; font-size: 0.9rem; padding-bottom: 40px;">
+        <p>Click "Download All (ZIP)" for folders with multiple files.</p>
+    </footer>
 </div>
 
 </body>
