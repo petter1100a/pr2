@@ -10,6 +10,7 @@
             --bi-color: #0891b2;
             --dl-color: #7c3aed;
             --ds-color: #059669;
+            --zip-color: #d97706;
             --bg: #f8fafc;
             --card: #ffffff;
             --text: #1e293b;
@@ -79,10 +80,13 @@
             font-weight: 600;
             font-size: 0.9rem;
             transition: background 0.2s;
+            margin-bottom: 8px;
         }
+        .btn:last-child { margin-bottom: 0; }
         .btn-bi { background: var(--bi-color); color: white; }
         .btn-dl { background: var(--dl-color); color: white; }
         .btn-ds { background: var(--ds-color); color: white; }
+        .btn-zip { background: var(--zip-color); color: white; }
         .btn:hover { opacity: 0.9; }
 
         .tag {
@@ -93,10 +97,12 @@
             font-weight: bold;
             margin-bottom: 8px;
             display: inline-block;
+            margin-right: 4px;
         }
         .tag-docx { background: #dbeafe; color: #1e40af; }
         .tag-ipynb { background: #fef3c7; color: #92400e; }
         .tag-csv { background: #dcfce7; color: #166534; }
+        .tag-zip { background: #ffedd5; color: #9a3412; }
 
         footer {
             margin-top: 60px;
@@ -112,7 +118,7 @@
 <div class="container">
     <header>
         <h1>BI & DL Practical Repository</h1>
-        <p>Download practical files and datasets for Business Intelligence and Deep Learning</p>
+        <p>Download practical files, notebooks, and datasets</p>
     </header>
 
     <!-- Business Intelligence Section -->
@@ -145,18 +151,22 @@
         <div class="card">
             <div>
                 <span class="tag tag-ipynb">Notebook</span>
+                <span class="tag tag-zip">ZIP</span>
                 <h3>BI Practical 4</h3>
-                <p class="file-info">File: BI_PR4.ipynb</p>
+                <p class="file-info">Notebook + Dataset</p>
             </div>
             <a href="BI_PR4.ipynb" class="btn btn-bi" download>Download IPYNB</a>
+            <a href="BI_PR4.zip" class="btn btn-zip" download>Download ZIP (All)</a>
         </div>
         <div class="card">
             <div>
                 <span class="tag tag-ipynb">Notebook</span>
+                <span class="tag tag-zip">ZIP</span>
                 <h3>BI Practical 5</h3>
-                <p class="file-info">File: BI_PR5.ipynb</p>
+                <p class="file-info">Notebook + Dataset</p>
             </div>
             <a href="BI_PR5.ipynb" class="btn btn-bi" download>Download IPYNB</a>
+            <a href="BI_PR5.zip" class="btn btn-zip" download>Download ZIP (All)</a>
         </div>
     </div>
 
@@ -166,10 +176,12 @@
         <div class="card">
             <div>
                 <span class="tag tag-ipynb">Notebook</span>
+                <span class="tag tag-zip">ZIP</span>
                 <h3>DL Practical 1</h3>
-                <p class="file-info">File: DL_PR1.ipynb</p>
+                <p class="file-info">Notebook + Data</p>
             </div>
             <a href="DL_PR1.ipynb" class="btn btn-dl" download>Download IPYNB</a>
+            <a href="DL_PR1.zip" class="btn btn-zip" download>Download ZIP (All)</a>
         </div>
         <div class="card">
             <div>
@@ -182,10 +194,12 @@
         <div class="card">
             <div>
                 <span class="tag tag-ipynb">Notebook</span>
+                <span class="tag tag-zip">ZIP</span>
                 <h3>DL Practical 3</h3>
-                <p class="file-info">File: DL_PR3.ipynb</p>
+                <p class="file-info">Notebook + Data</p>
             </div>
             <a href="DL_PR3.ipynb" class="btn btn-dl" download>Download IPYNB</a>
+            <a href="DL_PR3.zip" class="btn btn-zip" download>Download ZIP (All)</a>
         </div>
         <div class="card">
             <div>
@@ -198,10 +212,12 @@
         <div class="card">
             <div>
                 <span class="tag tag-ipynb">Notebook</span>
+                <span class="tag tag-zip">ZIP</span>
                 <h3>DL Practical 5</h3>
-                <p class="file-info">File: DL_PR5.ipynb</p>
+                <p class="file-info">Notebook + Data</p>
             </div>
             <a href="DL_PR5.ipynb" class="btn btn-dl" download>Download IPYNB</a>
+            <a href="DL_PR5.zip" class="btn btn-zip" download>Download ZIP (All)</a>
         </div>
     </div>
 
@@ -241,5 +257,3 @@
 
 </body>
 </html>
-   
- 
