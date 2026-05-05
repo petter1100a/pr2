@@ -23,7 +23,7 @@
             align-items: center;
         }
         .container {
-            max-width: 1000px;
+            max-width: 1100px;
             width: 100%;
         }
         header {
@@ -33,8 +33,8 @@
         h1 { margin-bottom: 10px; color: var(--primary); }
         .practical-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-            gap: 20px;
+            grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+            gap: 25px;
         }
         .card {
             background: var(--card);
@@ -61,11 +61,12 @@
             padding: 6px 12px;
             text-decoration: none;
             border-radius: 6px;
-            font-size: 0.85rem;
+            font-size: 0.82rem;
             font-weight: 500;
+            transition: transform 0.1s;
         }
-        .btn:hover { opacity: 0.9; }
-        .btn-zip { background: var(--accent); }
+        .btn:active { transform: scale(0.95); }
+        .btn-zip { background: var(--accent); width: 100%; text-align: center; box-sizing: border-box; }
         .btn-theory { background: #64748b; }
         .tag {
             font-size: 0.7rem;
@@ -77,9 +78,14 @@
         .actions {
             margin-top: 15px;
             display: flex;
-            gap: 10px;
-            flex-wrap: wrap;
+            flex-direction: column;
+            gap: 8px;
         }
+        .row-btns {
+            display: flex;
+            gap: 8px;
+        }
+        .row-btns .btn { flex: 1; text-align: center; }
     </style>
 </head>
 <body>
@@ -87,20 +93,23 @@
 <div class="container">
     <header>
         <h1>Practical Repository</h1>
-        <p>Direct downloads for code, theory, and full bundles</p>
+        <p>Download individual files or the full ZIP bundle</p>
     </header>
 
     <div class="practical-grid">
         <!-- Practical 1 -->
         <div class="card">
             <h3>Practical 1 <span class="tag">Python</span></h3>
-            <p>XML-RPC Factorial Service.</p>
+            <p>Socket Programming (TCP Factorial).</p>
             <div class="file-list">
-                <div class="file-item"><span>Factorial Code</span><a href="pr1/client (1).py" class="btn" download>Code</a></div>
+                <div class="file-item"><span>client (1).py</span><a href="pr1/client (1).py" class="btn" download>Download</a></div>
+                <div class="file-item"><span>server (1).py</span><a href="pr1/server (1).py" class="btn" download>Download</a></div>
             </div>
             <div class="actions">
-                <a href="pr1/README.md" class="btn btn-theory" target="_blank">View Theory</a>
-                <a href="pr1.zip" class="btn btn-zip" download>Download ZIP</a>
+                <div class="row-btns">
+                    <a href="pr1/README.md" class="btn btn-theory" target="_blank">View Theory</a>
+                    <a href="pr1.zip" class="btn btn-zip" download>Download ZIP</a>
+                </div>
             </div>
         </div>
 
@@ -109,20 +118,24 @@
             <h3>Practical 2 <span class="tag">Java RMI</span></h3>
             <p>RMI String Concatenation.</p>
             <div class="file-list">
-                <div class="file-item"><span>Java Files</span><a href="pr2/" class="btn">Browse</a></div>
+                <div class="file-item"><span>Client.java</span><a href="pr2/Client.java" class="btn" download>Download</a></div>
+                <div class="file-item"><span>Server.java</span><a href="pr2/Server.java" class="btn" download>Download</a></div>
+                <div class="file-item"><span>StringConcat.java</span><a href="pr2/StringConcat.java" class="btn" download>Download</a></div>
             </div>
             <div class="actions">
-                <a href="pr2/README.md" class="btn btn-theory" target="_blank">View Theory</a>
-                <a href="pr2.zip" class="btn btn-zip" download>Download ZIP</a>
+                <div class="row-btns">
+                    <a href="pr2/README.md" class="btn btn-theory" target="_blank">View Theory</a>
+                    <a href="pr2.zip" class="btn btn-zip" download>Download ZIP</a>
+                </div>
             </div>
         </div>
 
         <!-- Practical 4 -->
         <div class="card">
             <h3>Practical 4 <span class="tag">Fuzzy Sets</span></h3>
-            <p>Union, Intersection, and Composition.</p>
+            <p>Set Operations & Max-Min Composition.</p>
             <div class="file-list">
-                <div class="file-item"><span>Notebook File</span><a href="pr4(sets).ipynb" class="btn" download>Download</a></div>
+                <div class="file-item"><span>pr4(sets).ipynb</span><a href="pr4(sets).ipynb" class="btn" download>Download</a></div>
             </div>
             <div class="actions">
                 <a href="pr4(sets)_README.md" class="btn btn-theory" target="_blank">View Theory</a>
@@ -132,9 +145,9 @@
         <!-- Practical 5 -->
         <div class="card">
             <h3>Practical 5 <span class="tag">Load Balancing</span></h3>
-            <p>Round Robin & Random Simulation.</p>
+            <p>Round Robin, Random, Least Connections.</p>
             <div class="file-list">
-                <div class="file-item"><span>Notebook File</span><a href="pr5(loadbalancing).ipynb" class="btn" download>Download</a></div>
+                <div class="file-item"><span>pr5(loadbalancing).ipynb</span><a href="pr5(loadbalancing).ipynb" class="btn" download>Download</a></div>
             </div>
             <div class="actions">
                 <a href="pr5(loadbalancing)_README.md" class="btn btn-theory" target="_blank">View Theory</a>
@@ -144,9 +157,9 @@
         <!-- Practical 6 -->
         <div class="card">
             <h3>Practical 6 <span class="tag">AIS</span></h3>
-            <p>Clonal Selection Algorithm.</p>
+            <p>Clonal Selection Algorithm (Rastrigin).</p>
             <div class="file-list">
-                <div class="file-item"><span>Notebook File</span><a href="pr6.ipynb" class="btn" download>Download</a></div>
+                <div class="file-item"><span>pr6.ipynb</span><a href="pr6.ipynb" class="btn" download>Download</a></div>
             </div>
             <div class="actions">
                 <a href="pr6_README.md" class="btn btn-theory" target="_blank">View Theory</a>
@@ -155,10 +168,10 @@
 
         <!-- Practical 7 -->
         <div class="card">
-            <h3>Practical 7 <span class="tag">Damage Class</span></h3>
-            <p>Immune System Pattern Recognition.</p>
+            <h3>Practical 7 <span class="tag">Immune Sys</span></h3>
+            <p>Damage Classification (Detectors).</p>
             <div class="file-list">
-                <div class="file-item"><span>Notebook File</span><a href="pr7(damage classification).ipynb" class="btn" download>Download</a></div>
+                <div class="file-item"><span>pr7(damage...).ipynb</span><a href="pr7(damage classification).ipynb" class="btn" download>Download</a></div>
             </div>
             <div class="actions">
                 <a href="pr7_README.md" class="btn btn-theory" target="_blank">View Theory</a>
@@ -167,10 +180,10 @@
 
         <!-- Practical 8 -->
         <div class="card">
-            <h3>Practical 8 <span class="tag">GA (DEAP)</span></h3>
-            <p>Genetic Algorithm Framework.</p>
+            <h3>Practical 8 <span class="tag">GA</span></h3>
+            <p>Genetic Algorithm using DEAP.</p>
             <div class="file-list">
-                <div class="file-item"><span>Notebook File</span><a href="pr8(DEAP).ipynb" class="btn" download>Download</a></div>
+                <div class="file-item"><span>pr8(DEAP).ipynb</span><a href="pr8(DEAP).ipynb" class="btn" download>Download</a></div>
             </div>
             <div class="actions">
                 <a href="pr8_README.md" class="btn btn-theory" target="_blank">View Theory</a>
@@ -180,22 +193,26 @@
         <!-- Practical 9 -->
         <div class="card">
             <h3>Practical 9 <span class="tag">Java RMI</span></h3>
-            <p>Hotel Management System.</p>
+            <p>Distributed Hotel Booking System.</p>
             <div class="file-list">
-                <div class="file-item"><span>Java Files</span><a href="pr 9/" class="btn">Browse</a></div>
+                <div class="file-item"><span>HotelClient.java</span><a href="pr 9/HotelClient.java" class="btn" download>Download</a></div>
+                <div class="file-item"><span>HotelServer.java</span><a href="pr 9/HotelServer.java" class="btn" download>Download</a></div>
+                <div class="file-item"><span>Hotel.java</span><a href="pr 9/Hotel.java" class="btn" download>Download</a></div>
             </div>
             <div class="actions">
-                <a href="pr 9/README.md" class="btn btn-theory" target="_blank">View Theory</a>
-                <a href="pr9.zip" class="btn btn-zip" download>Download ZIP</a>
+                <div class="row-btns">
+                    <a href="pr 9/README.md" class="btn btn-theory" target="_blank">View Theory</a>
+                    <a href="pr9.zip" class="btn btn-zip" download>Download ZIP</a>
+                </div>
             </div>
         </div>
 
         <!-- Practical 10 -->
         <div class="card">
             <h3>Practical 10 <span class="tag">ACO</span></h3>
-            <p>Ant Colony Optimization.</p>
+            <p>Ant Colony Optimization (TSP).</p>
             <div class="file-list">
-                <div class="file-item"><span>Notebook File</span><a href="pr10(ASO).ipynb" class="btn" download>Download</a></div>
+                <div class="file-item"><span>pr10(ASO).ipynb</span><a href="pr10(ASO).ipynb" class="btn" download>Download</a></div>
             </div>
             <div class="actions">
                 <a href="pr10_README.md" class="btn btn-theory" target="_blank">View Theory</a>
@@ -204,7 +221,7 @@
     </div>
 
     <footer style="margin-top: 50px; text-align: center; color: #64748b; font-size: 0.9rem; padding-bottom: 40px;">
-        <p>Direct access to practical code and theory guides.</p>
+        <p>If "Download ZIP" fails, make sure you have uploaded the .zip files to the root directory.</p>
     </footer>
 </div>
 
