@@ -23,7 +23,7 @@
             align-items: center;
         }
         .container {
-            max-width: 1100px;
+            max-width: 1200px;
             width: 100%;
         }
         header {
@@ -33,7 +33,7 @@
         h1 { margin-bottom: 10px; color: var(--primary); }
         .practical-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+            grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
             gap: 25px;
         }
         .card {
@@ -63,10 +63,10 @@
             border-radius: 6px;
             font-size: 0.82rem;
             font-weight: 500;
-            transition: transform 0.1s;
+            transition: all 0.2s;
         }
-        .btn:active { transform: scale(0.95); }
-        .btn-zip { background: var(--accent); width: 100%; text-align: center; box-sizing: border-box; }
+        .btn:hover { opacity: 0.8; transform: translateY(-1px); }
+        .btn-zip { background: var(--accent); }
         .btn-theory { background: #64748b; }
         .tag {
             font-size: 0.7rem;
@@ -79,13 +79,20 @@
             margin-top: 15px;
             display: flex;
             flex-direction: column;
-            gap: 8px;
+            gap: 10px;
         }
         .row-btns {
             display: flex;
-            gap: 8px;
+            gap: 10px;
         }
         .row-btns .btn { flex: 1; text-align: center; }
+        footer {
+            margin-top: 50px;
+            text-align: center;
+            color: #64748b;
+            font-size: 0.9rem;
+            padding-bottom: 40px;
+        }
     </style>
 </head>
 <body>
@@ -93,14 +100,14 @@
 <div class="container">
     <header>
         <h1>Practical Repository</h1>
-        <p>Download individual files or the full ZIP bundle</p>
+        <p>Download individual source files, view theory, or download the full ZIP bundle.</p>
     </header>
 
     <div class="practical-grid">
         <!-- Practical 1 -->
         <div class="card">
             <h3>Practical 1 <span class="tag">Python</span></h3>
-            <p>Socket Programming (TCP Factorial).</p>
+            <p>Socket Programming (Factorial Server).</p>
             <div class="file-list">
                 <div class="file-item"><span>client (1).py</span><a href="pr1/client (1).py" class="btn" download>Download</a></div>
                 <div class="file-item"><span>server (1).py</span><a href="pr1/server (1).py" class="btn" download>Download</a></div>
@@ -121,6 +128,7 @@
                 <div class="file-item"><span>Client.java</span><a href="pr2/Client.java" class="btn" download>Download</a></div>
                 <div class="file-item"><span>Server.java</span><a href="pr2/Server.java" class="btn" download>Download</a></div>
                 <div class="file-item"><span>StringConcat.java</span><a href="pr2/StringConcat.java" class="btn" download>Download</a></div>
+                <div class="file-item"><span>StringConcatImpl.java</span><a href="pr2/StringConcatImpl.java" class="btn" download>Download</a></div>
             </div>
             <div class="actions">
                 <div class="row-btns">
@@ -133,7 +141,7 @@
         <!-- Practical 4 -->
         <div class="card">
             <h3>Practical 4 <span class="tag">Fuzzy Sets</span></h3>
-            <p>Set Operations & Max-Min Composition.</p>
+            <p>Fuzzy Set Operations & Max-Min Composition.</p>
             <div class="file-list">
                 <div class="file-item"><span>pr4(sets).ipynb</span><a href="pr4(sets).ipynb" class="btn" download>Download</a></div>
             </div>
@@ -169,9 +177,9 @@
         <!-- Practical 7 -->
         <div class="card">
             <h3>Practical 7 <span class="tag">Immune Sys</span></h3>
-            <p>Damage Classification (Detectors).</p>
+            <p>Structural Damage Classification.</p>
             <div class="file-list">
-                <div class="file-item"><span>pr7(damage...).ipynb</span><a href="pr7(damage classification).ipynb" class="btn" download>Download</a></div>
+                <div class="file-item"><span>pr7(damage classification).ipynb</span><a href="pr7(damage classification).ipynb" class="btn" download>Download</a></div>
             </div>
             <div class="actions">
                 <a href="pr7_README.md" class="btn btn-theory" target="_blank">View Theory</a>
@@ -181,7 +189,7 @@
         <!-- Practical 8 -->
         <div class="card">
             <h3>Practical 8 <span class="tag">GA</span></h3>
-            <p>Genetic Algorithm using DEAP.</p>
+            <p>Genetic Algorithm using DEAP framework.</p>
             <div class="file-list">
                 <div class="file-item"><span>pr8(DEAP).ipynb</span><a href="pr8(DEAP).ipynb" class="btn" download>Download</a></div>
             </div>
@@ -198,6 +206,7 @@
                 <div class="file-item"><span>HotelClient.java</span><a href="pr 9/HotelClient.java" class="btn" download>Download</a></div>
                 <div class="file-item"><span>HotelServer.java</span><a href="pr 9/HotelServer.java" class="btn" download>Download</a></div>
                 <div class="file-item"><span>Hotel.java</span><a href="pr 9/Hotel.java" class="btn" download>Download</a></div>
+                <div class="file-item"><span>HotelImpl.java</span><a href="pr 9/HotelImpl.java" class="btn" download>Download</a></div>
             </div>
             <div class="actions">
                 <div class="row-btns">
@@ -210,7 +219,7 @@
         <!-- Practical 10 -->
         <div class="card">
             <h3>Practical 10 <span class="tag">ACO</span></h3>
-            <p>Ant Colony Optimization (TSP).</p>
+            <p>Ant Colony Optimization for TSP.</p>
             <div class="file-list">
                 <div class="file-item"><span>pr10(ASO).ipynb</span><a href="pr10(ASO).ipynb" class="btn" download>Download</a></div>
             </div>
@@ -220,8 +229,8 @@
         </div>
     </div>
 
-    <footer style="margin-top: 50px; text-align: center; color: #64748b; font-size: 0.9rem; padding-bottom: 40px;">
-        <p>If "Download ZIP" fails, make sure you have uploaded the .zip files to the root directory.</p>
+    <footer>
+        <p>Created for quick practical file access. Ensure ZIP files are pushed to GitHub for ZIP buttons to work.</p>
     </footer>
 </div>
 
