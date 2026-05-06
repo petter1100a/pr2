@@ -82,7 +82,6 @@
             transition: background 0.2s;
             margin-bottom: 8px;
         }
-        .btn:last-child { margin-bottom: 0; }
         .btn-bi { background: var(--bi-color); color: white; }
         .btn-dl { background: var(--dl-color); color: white; }
         .btn-ds { background: var(--ds-color); color: white; }
@@ -102,6 +101,7 @@
         .tag-docx { background: #dbeafe; color: #1e40af; }
         .tag-ipynb { background: #fef3c7; color: #92400e; }
         .tag-csv { background: #dcfce7; color: #166534; }
+        .tag-xlsx { background: #fae8ff; color: #701a75; }
         .tag-zip { background: #ffedd5; color: #9a3412; }
 
         footer {
@@ -247,6 +247,22 @@
                 <p class="file-info">File: USA_Housing.csv</p>
             </div>
             <a href="USA_Housing.csv" class="btn btn-ds" download>Download Dataset</a>
+        </div>
+        <div class="card">
+            <div>
+                <span class="tag tag-csv">CSV Data</span>
+                <h3>FSI Data (2006-2023)</h3>
+                <p class="file-info">File: FSI_Data_2006_2023.csv</p>
+            </div>
+            <a href="FSI_Data_2006_2023.csv" class="btn btn-ds" download>Download Dataset</a>
+        </div>
+        <div class="card">
+            <div>
+                <span class="tag tag-xlsx">Excel Data</span>
+                <h3>FSI 2006</h3>
+                <p class="file-info">File: fsi-2006.xlsx</p>
+            </div>
+            <a href="fsi-2006.xlsx" class="btn btn-ds" download>Download Dataset</a>
         </div>
     </div>
 
